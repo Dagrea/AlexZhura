@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="navbar" >
     <div className="">Alexandr Zhuravliov</div>
-    <div className="button"></div>
+    <div className="menu"></div>
     </div>
   );
 };

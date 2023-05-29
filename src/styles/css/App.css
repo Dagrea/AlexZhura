@@ -1,27 +1,49 @@
-.App {
-  text-align: center;
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
 }
 
 body {
   min-width: 320px;
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
 }
 
 .navbar {
   background-color: #000;
   color: #FFF;
-  min-height: 50px;
+  min-height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.button {
+.content {
+  padding: 10px 10px 0px 10px;
+}
+
+.footer {
+  background-color: #000;
+  color: #FFF;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
   width: 40px;
   height: 40px;
   border: none;
   position: relative;
 }
-.button::after {
+.menu::after {
   content: "";
   width: 12px;
   height: 2px;
@@ -31,6 +53,22 @@ body {
   top: 15px;
   left: 15px;
   box-shadow: 0 4px 0 0 #838383, 0 8px 0 0 #838383;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  background-image: url("../../assets/avatar.jpg");
+  width: 15em;
+  height: 15em;
+  background-repeat: no-repeat;
+  background-size: 15em;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=App.css.map */

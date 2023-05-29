@@ -5,16 +5,19 @@ import Footer from './components/Footer.jsx'
 import Greeting from './components/Greeting.jsx'
 import About from './components/About.jsx'
 import Portfolio from './components/Portfolio.jsx'
-import Contacts from './components/Contacts.jsx'
+import Contact from './components/Contact.jsx'
 
 function App() {
   return (
     <div className="App">  
       <Navbar/>
+      <div className="content">
       <Greeting/>
       <About/>
       <Portfolio/>
-      <Contacts/>
+      <Contact/>
+      </div>
+      <Footer/>
     </div>
   );
 }
