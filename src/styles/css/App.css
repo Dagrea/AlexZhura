@@ -1,3 +1,22 @@
+@font-face ("Nanum Gothic Coding", "../fonts/NanumGothicCoding-Bold.ttf");
+@font-face : cursive;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 html {
   box-sizing: border-box;
 }
@@ -13,24 +32,28 @@ body {
 
 .App {
   text-align: center;
+  font-family: "Nanum Gothic Coding";
 }
 
 .navbar {
-  background-color: #000;
-  color: #FFF;
+  background-color: #1B2125;
+  color: #C0C0C0;
   min-height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
 .content {
-  padding: 10px 10px 0px 10px;
+  padding: 10px 10px 10px 10px;
+  background-color: #E0E0E0;
+  min-height: 100vh;
 }
 
 .footer {
-  background-color: #000;
-  color: #FFF;
+  background-color: #1B2125;
+  color: #C0C0C0;
   min-height: 70px;
   display: flex;
   justify-content: center;
@@ -48,27 +71,31 @@ body {
   width: 12px;
   height: 2px;
   border-radius: 1px;
-  background-color: #838383;
+  background-color: #C0C0C0;
   position: absolute;
   top: 15px;
   left: 15px;
-  box-shadow: 0 4px 0 0 #838383, 0 8px 0 0 #838383;
+  box-shadow: 0 4px 0 0 #C0C0C0, 0 8px 0 0 #C0C0C0;
 }
 
-.greeting {
+.greeting, .about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.avatar {
+.avatar, .avatar_about {
   background-image: url("../../assets/avatar.jpg");
   width: 15em;
   height: 15em;
   background-repeat: no-repeat;
   background-size: 15em;
   border-radius: 50%;
+}
+.avatar_about {
+  background-image: url("../../assets/about.jpg");
+  animation: rotate 5s linear infinite;
 }
 
 /*# sourceMappingURL=App.css.map */

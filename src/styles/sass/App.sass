@@ -1,5 +1,6 @@
 @import 'variables'
 @import 'fonts'
+@import 'animation'
 html
   box-sizing: border-box
 *,*::after,*::before
@@ -9,18 +10,22 @@ body
   overflow-x: hidden
 .App 
   text-align: center
+  font-family: $font-stack
 .navbar
-  background-color: #000
-  color: #FFF
+  background-color: $main-color
+  color: $text-color
   min-height: 70px
   display: flex
   justify-content: space-between
   align-items: center
+  padding: 0 20px
 .content
-  padding: 10px 10px 0px 10px
+  padding: 10px 10px 10px 10px
+  background-color: $back-color
+  min-height: 100vh
 .footer
-  background-color: #000
-  color: #FFF
+  background-color: $main-color
+  color: $text-color
   min-height: 70px
   display: flex
   justify-content: center
@@ -35,16 +40,18 @@ body
     width: 12px
     height: 2px
     border-radius: 1px
-    background-color: $sc
+    background-color: $text-color
     position: absolute
     top: 15px
     left: 15px
-    box-shadow: 0 4px 0 0 $sc, 0 8px 0 0 $sc
+    box-shadow: 0 4px 0 0 $text-color, 0 8px 0 0 $text-color
 .greeting
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
+.about
+  @extend .greeting
 .avatar
   background-image: url('../../assets/avatar.jpg')
   width: 15em
@@ -52,3 +59,9 @@ body
   background-repeat: no-repeat
   background-size: 15em
   border-radius: 50%
+  &_about
+    @extend .avatar
+    background-image: url('../../assets/about.jpg')
+    animation: rotate 5s linear infinite
+
+
