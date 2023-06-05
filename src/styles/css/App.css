@@ -5,16 +5,16 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(90deg);
-  }
-  50% {
     transform: rotate(180deg);
   }
+  50% {
+    transform: rotate(360deg);
+  }
   75% {
-    transform: rotate(270deg);
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 html {
@@ -28,14 +28,25 @@ html {
 body {
   min-width: 320px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .App {
   text-align: center;
   font-family: "Nanum Gothic Coding";
+  font-size: 5vw;
 }
 
 .navbar {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
   background-color: #1B2125;
   color: #C0C0C0;
   min-height: 70px;
@@ -44,9 +55,18 @@ body {
   align-items: center;
   padding: 0 20px;
 }
+.navbar_logo {
+  font-size: calc(15px + 0.8vw);
+  transition-property: font-size;
+  transition-duration: 1s;
+  transition-delay: 0.2s;
+}
+.navbar_logo:hover {
+  font-size: calc(20px + 0.8vw);
+}
 
 .content {
-  padding: 10px 10px 10px 10px;
+  padding: 80px 10px 10px 10px;
   background-color: #E0E0E0;
   min-height: 100vh;
 }
@@ -85,6 +105,20 @@ body {
   align-items: center;
 }
 
+.about {
+  text-align: justify;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact div:not(:nth-child(2)) {
+  margin-top: 20px;
+}
+
 .avatar, .avatar_about {
   background-image: url("../../assets/avatar.jpg");
   width: 15em;
@@ -95,7 +129,17 @@ body {
 }
 .avatar_about {
   background-image: url("../../assets/about.jpg");
-  animation: rotate 5s linear infinite;
+  animation: rotate 10s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .content {
+    padding: 20px 40px;
+  }
+  .navbar {
+    min-height: 80px;
+    padding: 0 30px;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
