@@ -1,26 +1,54 @@
 @import 'variables'
 @import 'fonts'
 @import 'animation'
+$size: 10px
 html
   box-sizing: border-box
+
+h1,h2,h3,h4,h5,h6
+  margin: 0px
+
 *,*::after,*::before
   box-sizing: inherit
+
 body
   min-width: 320px
-  overflow-x: hidden
-  scroll-behavior: smooth
+  overflow: hidden
+
 a
   text-decoration: none
   color: inherit
+
 .App 
+  height:100%
+  max-height: 100vh
+  overflow: overlay 
+  overflow-x: hidden
   text-align: center
   font-family: $font-stack
-  font-size: calc(5vw)
+  font-size: calc(15px + 0.390625vw)
+  &::-webkit-scrollbar
+    width:  10px
+    background-color: transparent
+    z-index: 11
+  &::-webkit-scrollbar-track
+    background-color: transparent
+  &::-webkit-scrollbar-thumb
+    background-color: rgba(0,0,0,0.2)
+    border-radius: 20px
+    &:hover
+      background-color: rgba(0,0,0,0.4)
+    &:active
+      background-color: rgba(0,0,0,0.9)
+.scroll-hide
+  &::-webkit-scrollbar
+    width:  0px
+
 .navbar
   position: sticky
   top: 0px
   width: 100%
-  z-index: 100
+  z-index: 10
   background-color: $main-color
   color: $text-color
   min-height: 70px
@@ -29,29 +57,37 @@ a
   align-items: center
   padding: 0 20px
   &_logo
-    font-size: calc(15px + .8vw)
+    font-size: calc(20px + 0.390625vw)
     transition:
       property: font-size
       duration: 1s
       delay: 0.2s
+    cursor: pointer
     &:hover
-      font-size: calc(20px + .8vw)
+      font-size: calc(20px + 0.8vw)
+@media(min-width: 640px)
+  .navbar
+    min-height: 80px
+    padding: 0 30px
+
 .content
   padding: 80px 10px 10px 10px
   background-color: $back-color
   min-height: 100vh
-.footer
-  background-color: $main-color
-  color: $text-color
-  min-height: 70px
   display: flex
   justify-content: center
-  align-items: center
+@media(min-width: 640px)
+  .content
+    padding: 20px 40px
+    &_inner
+      max-width: 900px
+
 .menu
   width: 40px
   height: 40px
   border: none
   position: relative
+  cursor: pointer
   &::after
     content:""
     width: 12px
@@ -62,36 +98,71 @@ a
     top: 15px
     left: 15px
     box-shadow: 0 4px 0 0 $text-color, 0 8px 0 0 $text-color
+
 .greeting
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
-.about
-  @extend .greeting
-  text-align: justify
-.contact
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  & div:not(:nth-child(2))
-    margin-top: 20px
+
 .avatar
-  background-image: url('../../assets/avatar.jpg')
+  background-image: url('../../assets/avatar1.jpg')
   width: 15em
   height: 15em
   background-repeat: no-repeat
   background-size: 15em
   border-radius: 50%
-  &_about
-    @extend .avatar
-    background-image: url('../../assets/about.jpg')
-    animation: rotate 10s linear infinite
-@media(min-width: 640px)
-  .content
-    padding: 20px 40px
-  .navbar
-    min-height: 80px
-    padding: 0 30px
+  &_running
+    animation: borders-morph 1.5s linear infinite
+    animation-play-state: running
 
+.about
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: justify
+  padding-top: 200px
+  &_text
+    max-width: 640px
+
+.avatar_about  
+  display: flex
+  justify-content: center
+.avatar_about_img  
+  border-radius: 30%
+  width: 15em
+  height: 15em
+@media(min-width: 1024px)
+  .about
+    &_inner
+      display: flex
+      flex-direction: row
+    &_text
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding-left: 20px
+  .avatar_about
+
+.portfolio
+  margin-top: 200px
+.contact
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin-top: 200px
+  & div:not(:nth-child(2))
+    margin-top: 20px
+
+
+
+.footer
+  background-color: $main-color
+  color: $text-color
+  min-height: 70px
+  display: flex
+  justify-content: center
+  align-items: center

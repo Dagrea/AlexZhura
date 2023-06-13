@@ -1,11 +1,13 @@
-@keyframes rotate
+@keyframes borders-morph 
     0%
-      transform: rotate(0deg) 
+      border-radius: 50%
     25%
-      transform: rotate(180deg) 
+      border-radius: 60% 40% 60% 40%/60% 40% 60% 40%
     50%
-      transform: rotate(360deg) 
+      border-radius: 40% 60% 60% 40%/60% 40% 60% 40%
     75%
-      transform: rotate(180deg) 
+      border-radius: 40% 60% 40% 60%/60% 40% 60% 40%
     100%
-      transform: rotate(0deg) 
+      border-radius: 50%
+@keyframes to-circle
+  border-radius: 50%
