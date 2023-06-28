@@ -4,7 +4,7 @@ import avatar from '../assets/about.jpg'
 const About = () => {
 
   return (
-    <div className="about" >
+    <div className="about" id='about'>
     <div><h1>ABOUT ME</h1></div>
    <div className="about_inner">
     <div className="avatar_about">

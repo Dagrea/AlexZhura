@@ -4,8 +4,8 @@ const Portfolio = () => {
 
   const [projects, setProjects] = useState([]);
   return (
-    <div className="" >
-    <h1>Portfolio</h1>
+    <div className="portfolio" id='portfolio'>
+    <div><h1>Portfolio</h1></div>
     {projects.length > 0 ?
     projects.map((data) => (
       <div>Project {data.name}</div>)) :
