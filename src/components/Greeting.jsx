@@ -7,13 +7,16 @@ const Greeting = () => {
   if (isActive) {
     className += ' avatar_running';
   }
+  let text = 'React developer\nFront-End\nJunior'
   return (
     <div className="greeting" id='greeting'>
     <div className={className} 
       onMouseEnter={() => setIsActive(current => !current)}
     ></div>
-    <h1>Junior Front-End React developer</h1>
+    <div className="greeting_text" >
+    <h1>{text}</h1>
     <p>Hello, I am Alexandr Zhuravliov. A passionate Front-end React Developer based in Ukraine. </p>
+    </div>
     <div className="greeting_icons" >
     {tech_stack.map((tech) => <div className={"greeting_icon_container"}><div className={"greeting_icons_"+tech} /></div>)}
     </div>

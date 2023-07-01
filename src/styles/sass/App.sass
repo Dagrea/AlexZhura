@@ -206,8 +206,13 @@ ul
   flex-direction: column
   justify-content: center
   align-items: center
+  min-height: 100vh
+  height: auto
   & p
-    margin-top: 1em
+    margin-top: 2rem
+  & h1
+    margin-top: .5rem
+    white-space: pre-line
   &_icons
     display: flex
     flex-direction: row
@@ -215,13 +220,15 @@ ul
     justify-content: center
     align-items: center
     width: 100%
-    margin-top: 1em
+    margin-top: 2rem
+    padding-left: 1rem
+    padding-right: 1rem
   &_icon_container
     display: flex
     justify-content: center
     align-items: center
-    height: 4em
-    width: 4em
+    height: 4rem
+    width: 4rem
     margin: 5px
     background-color: #fff
     border-radius: 50%
@@ -229,18 +236,29 @@ ul
     cursor: pointer  
 @each $tech in $tech-stack
   .greeting_icons_#{$tech}
-    @include image('../../assets/#{$tech}.png',2.5em,2.5em)
+    @include image('../../assets/#{$tech}.png',2.5rem,2.5rem)
 
+@media(min-width: 640px)
+  .greeting p 
+    max-width: 400px
+@media(min-width: 768px)
 @media(min-width: 1024px)
   .greeting
-    min-height: 80vh
+    flex-direction: row
+    flex-wrap: wrap
+    align-content: center
+    & h1
+      margin-left: 2rem
+    & p
+      max-width: 550px
+@media(min-width: 1440px)
 
 .avatar
   background-image: url('../../assets/avatar1.jpg')
-  width: 15em
-  height: 15em
+  width: 18rem
+  height: 18rem
   background-repeat: no-repeat
-  background-size: 15em
+  background-size: 18rem
   border-radius: 50%
   &_running
     animation: borders-morph 1.5s linear infinite
@@ -249,22 +267,26 @@ ul
 .about
   display: flex
   flex-direction: column
-  justify-content: center
   align-items: center
   text-align: justify
+  min-height: 80vh
   &_text
     max-width: 640px
+  & p
+    margin-top: 1rem
 @media(min-width: 1024px)
   .about
     min-height: 80vh
-
+    &_text
+      margin-left: 2rem
 .avatar_about  
   display: flex
   justify-content: center
+  margin: 20px
 .avatar_about_img  
   border-radius: 30%
-  width: 15em
-  height: 15em
+  width: 20rem
+  height: 20rem
 @media(min-width: 1024px)
   .about
     &_inner
@@ -277,13 +299,17 @@ ul
       align-items: center
       padding-left: 20px
   .avatar_about
+    width: 15rem
+    height: 15rem
 
 .portfolio
   display: flex
   flex-direction: column
-  justify-content: space-around
   align-items: center
   text-align: justify
+  min-height: 30vh
+  & h3
+    margin-top: 2rem
 @media(min-width: 1024px)
   .portfolio
     min-height: 30vh
@@ -291,10 +317,14 @@ ul
 .contact
   display: flex
   flex-direction: column
-  justify-content: center
   align-items: center
+  min-height: 30vh
+  & div:nth-child(2)
+    margin-top: 2rem
   & div:not(:nth-child(2))
-    margin-top: 20px
+    margin-top: 1rem
+  & p 
+    margin-top: 1rem
 @media(min-width: 1024px)
   .contact
     min-height: 30vh
@@ -307,5 +337,5 @@ ul
   justify-content: space-around
   align-items: center
   &_github_icon
-     @include image('../../assets/github.png',2em,2em)
+     @include image('../../assets/github.png',2rem,2rem)
      cursor: pointer
