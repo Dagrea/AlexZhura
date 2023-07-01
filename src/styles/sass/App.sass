@@ -201,7 +201,7 @@ ul
     .hamb
         display: none
 
-.greeting
+.home
   display: flex
   flex-direction: column
   justify-content: center
@@ -235,15 +235,14 @@ ul
     box-shadow: 0 0 20px rgba(0,0,0,.1)
     cursor: pointer  
 @each $tech in $tech-stack
-  .greeting_icons_#{$tech}
+  .home_icons_#{$tech}
     @include image('../../assets/#{$tech}.png',2.5rem,2.5rem)
 
 @media(min-width: 640px)
-  .greeting p 
+  .home p 
     max-width: 400px
-@media(min-width: 768px)
 @media(min-width: 1024px)
-  .greeting
+  .home
     flex-direction: row
     flex-wrap: wrap
     align-content: center
@@ -251,7 +250,6 @@ ul
       margin-left: 2rem
     & p
       max-width: 550px
-@media(min-width: 1440px)
 
 .avatar
   background-image: url('../../assets/avatar1.jpg')
@@ -274,11 +272,6 @@ ul
     max-width: 640px
   & p
     margin-top: 1rem
-@media(min-width: 1024px)
-  .about
-    min-height: 80vh
-    &_text
-      margin-left: 2rem
 .avatar_about  
   display: flex
   justify-content: center
@@ -289,15 +282,17 @@ ul
   height: 20rem
 @media(min-width: 1024px)
   .about
+    min-height: 80vh
     &_inner
       display: flex
       flex-direction: row
+      margin-top: 2rem
     &_text
       display: flex
       flex-direction: column
       justify-content: center
       align-items: center
-      padding-left: 20px
+      padding-left: 3rem
   .avatar_about
     width: 15rem
     height: 15rem

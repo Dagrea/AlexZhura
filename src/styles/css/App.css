@@ -273,7 +273,7 @@ ul {
     display: none;
   }
 }
-.greeting {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -281,14 +281,14 @@ ul {
   min-height: 100vh;
   height: auto;
 }
-.greeting p {
+.home p {
   margin-top: 2rem;
 }
-.greeting h1 {
+.home h1 {
   margin-top: 0.5rem;
   white-space: pre-line;
 }
-.greeting_icons {
+.home_icons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -299,7 +299,7 @@ ul {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.greeting_icon_container {
+.home_icon_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -312,7 +312,7 @@ ul {
   cursor: pointer;
 }
 
-.greeting_icons_html {
+.home_icons_html {
   background-image: url("../../assets/html.png");
   height: 2.5rem;
   width: 2.5rem;
@@ -320,7 +320,7 @@ ul {
   background-size: contain;
 }
 
-.greeting_icons_css {
+.home_icons_css {
   background-image: url("../../assets/css.png");
   height: 2.5rem;
   width: 2.5rem;
@@ -328,7 +328,7 @@ ul {
   background-size: contain;
 }
 
-.greeting_icons_sass {
+.home_icons_sass {
   background-image: url("../../assets/sass.png");
   height: 2.5rem;
   width: 2.5rem;
@@ -336,7 +336,7 @@ ul {
   background-size: contain;
 }
 
-.greeting_icons_react {
+.home_icons_react {
   background-image: url("../../assets/react.png");
   height: 2.5rem;
   width: 2.5rem;
@@ -344,7 +344,7 @@ ul {
   background-size: contain;
 }
 
-.greeting_icons_redux {
+.home_icons_redux {
   background-image: url("../../assets/redux.png");
   height: 2.5rem;
   width: 2.5rem;
@@ -353,20 +353,20 @@ ul {
 }
 
 @media (min-width: 640px) {
-  .greeting p {
+  .home p {
     max-width: 400px;
   }
 }
 @media (min-width: 1024px) {
-  .greeting {
+  .home {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
   }
-  .greeting h1 {
+  .home h1 {
     margin-left: 2rem;
   }
-  .greeting p {
+  .home p {
     max-width: 550px;
   }
 }
@@ -397,14 +397,6 @@ ul {
   margin-top: 1rem;
 }
 
-@media (min-width: 1024px) {
-  .about {
-    min-height: 80vh;
-  }
-  .about_text {
-    margin-left: 2rem;
-  }
-}
 .avatar_about {
   display: flex;
   justify-content: center;
@@ -418,16 +410,20 @@ ul {
 }
 
 @media (min-width: 1024px) {
+  .about {
+    min-height: 80vh;
+  }
   .about_inner {
     display: flex;
     flex-direction: row;
+    margin-top: 2rem;
   }
   .about_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 3rem;
   }
   .avatar_about {
     width: 15rem;
