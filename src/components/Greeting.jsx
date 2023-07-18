@@ -18,7 +18,7 @@ const Greeting = () => {
     <p>Hello, I am Alexandr Zhuravliov. A passionate Front-end React Developer based in Ukraine. </p>
     </div>
     <div className="home_icons" >
-    {tech_stack.map((tech) => <div className={"greeting_icon_container"}><div className={"greeting_icons_"+tech} /></div>)}
+    {tech_stack.map((tech) => <div className={"home_icon_container"}><div className={"home_icons_"+tech} /></div>)}
     </div>
     </div>
   );

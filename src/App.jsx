@@ -25,12 +25,10 @@ function App() {
     <div className={isScroll ? 'App' : 'App scroll-hide'} onScroll={handleOnScroll}>  
       <Navbar/>
       <div className="content">
-      <div className="content_inner">
       <Greeting/>
       <About/>
       <Portfolio/>
       <Contact/>
-      </div>
       </div>
       <Footer/>
     </div>
