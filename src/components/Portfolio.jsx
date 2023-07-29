@@ -8,14 +8,14 @@ import project2 from '../assets/project2.png';
 const projects = [
   {
     name:'Video Editor Portfolio',
-    description: 'This project is a portfolio with examples of the work of a video editor. The project is a landing page with a modern responsive design цritten in a mobile-first approach.',
+    description: 'This project is a portfolio with examples of the work of a video editor. The project is a landing page with a modern responsive design written in a mobile-first approach.',
     img: project1,
-    keywords: ['React', 'SASS'],
+    keywords: ['React', 'CSS', 'i18n'],
     links: ['https://dagrea.github.io/video-editor-portfolio/', 'https://github.com/Dagrea/video-editor-portfolio']
   },
   {
     name:'Book Store',
-    description: 'This project is a portfolio with examples of the work of a video editor. The project is a landing page with a modern responsive design. The project uses React, preprocessor Sass and localization framework i18n',
+    description: 'This project is a simple SPA of an online store. The project uses React, Redux toolkit and Material UI',
     img: project2,
     keywords: ['React', 'Redux',  'Material UI'],
     links: ['https://dagrea.github.io/book-store/', 'https://github.com/Dagrea/book-store']
@@ -32,15 +32,7 @@ const Project = ({data, index}) => {
     <div><h3>{data.name}</h3></div>
     <div>{data.description}</div>
     <div className="project_keywords" >
-    <div className="project_keyword" >
-    React
-    </div>
-    <div className="project_keyword" >
-    SASS
-    </div>
-    <div className="project_keyword" >
-    Material UI
-    </div>
+    {data.keywords.map((keyword) => <div className="project_keyword" >{keyword}</div> )}
     </div>
     <div className="project_links" >
     <Link to={data.links[1]} target="_blank" >
