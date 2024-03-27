@@ -18,7 +18,7 @@ const projects = [
     description: 'This project is a simple SPA of an online store. The project uses React, Redux toolkit and Material UI',
     img: project2,
     keywords: ['React', 'Redux',  'Material UI'],
-    links: ['https://dagrea.github.io/book-store/', 'https://github.com/Dagrea/book-store']
+    links: ['https://book-store-cyan-one.vercel.app/', 'https://github.com/Dagrea/book-store']
   },
 ]
 
